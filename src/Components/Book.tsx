@@ -26,7 +26,7 @@ function Book(props: BookProps) {
 	}
 
 	return (
-		<Card thumbnail={props.thumbnail}>
+		<Card thumbnail={props?.thumbnail ?? ""}>
 			<Card.Header>
 				<h4 className="card-title">{props.title}</h4>
 				<h5>{props.authors?.join(", ")}</h5>

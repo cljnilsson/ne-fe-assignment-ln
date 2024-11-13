@@ -9,15 +9,17 @@ function Pagination(props: { totalItems: number }) {
 	const pages = Math.ceil(props.totalItems / 30);
 	const [currentPage, setCurrentPage] = useState<number>(0);
 
+	const pageSize = 30;
+
 	// Automatically converts index to page
 	useEffect(() => {
-		console.log("index:", currentIndex, "page", currentIndex / 30);
-		setCurrentPage(currentIndex / 30);
+		console.log("index:", currentIndex, "page", currentIndex / pageSize);
+		setCurrentPage(currentIndex / pageSize);
 	}, [currentIndex]);
 
 	function switchPage(toPage: number) {
-		console.log("Switching page to index: " + (toPage - 1) * 30);
-		fetchBooks(searchString, (toPage - 1) * 30);
+		console.log("Switching page to index: " + (toPage - 1) * pageSize);
+		fetchBooks(searchString, (toPage - 1) * pageSize);
 	}
 
 	function btn(page: number) {

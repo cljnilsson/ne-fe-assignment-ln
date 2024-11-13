@@ -76,7 +76,7 @@ function BookPage() {
 					categories={book.volumeInfo.categories ?? []}
 					authors={book.volumeInfo.authors ?? []}
 					description={book.volumeInfo.description}
-					thumbnail={book.volumeInfo.imageLinks.thumbnail}
+					thumbnail={book.volumeInfo.imageLinks?.thumbnail ?? ""}
 					inStock={
 						book.accessInfo.epub.isAvailable ||
 						book.accessInfo.pdf.isAvailable
