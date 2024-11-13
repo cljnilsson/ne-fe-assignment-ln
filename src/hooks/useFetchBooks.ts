@@ -2,10 +2,11 @@ import { useCallback, useContext } from "react";
 import BookApi from "../api/books";
 import SearchContext from '../Context/SearchContext';
 
-
+// Using a custom hook to automate setting contexts
 const useFetchBooks = () => {
     const { setTotalItems, setLoading, setSearchString, setBooks, setCurrentIndex } = useContext(SearchContext);
 
+	// Minor opmization to avoid re-rendering needlessly
     const fetchBooks = useCallback(async (searchString: string, index: number) => {
 		setLoading(true);
 
